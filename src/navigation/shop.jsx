@@ -12,10 +12,23 @@ const ShopNavigator = () => {
         component={Categories}
         options={{
           headerShown: false,
+          title: 'Categories',
         }}
       />
-      <Stack.Screen name="Products" component={Products} />
-      <Stack.Screen name="ProductDetail" component={ProductDetail} />
+      <Stack.Screen
+        name="Products"
+        component={Products}
+        options={{
+          title: 'Products',
+        }}
+      />
+      <Stack.Screen
+        name="ProductDetail"
+        component={ProductDetail}
+        options={{
+          title: 'Product Detail',
+        }}
+      />
     </Stack.Navigator>
   );
 };
