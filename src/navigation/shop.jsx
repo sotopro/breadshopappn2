@@ -1,12 +1,24 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text, TouchableOpacity } from 'react-native';
 
+import { theme } from '../constants/theme';
 import { Categories, ProductDetail, Products } from '../screens/index';
 
 const Stack = createNativeStackNavigator();
 
 const ShopNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Categories">
+    <Stack.Navigator
+      initialRouteName="Categories"
+      screenOptions={{
+        headerTintColor: theme.colors.primary,
+        navigationBarColor: theme.colors.secondary,
+        headerTitleStyle: {
+          fontFamily: 'Bitter-Bold',
+          fontSize: 18,
+          color: theme.colors.title,
+        },
+      }}>
       <Stack.Screen
         name="Categories"
         component={Categories}

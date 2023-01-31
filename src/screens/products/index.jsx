@@ -1,16 +1,17 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-import { stlyes } from './styles';
+import { styles } from './styles';
+import { theme } from '../../constants/theme';
 
 const Products = ({ navigation }) => {
   return (
-    <View style={stlyes.container}>
-      <Text>Products</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Products</Text>
       <Button
         title="Go to Product Detail"
         onPress={() => navigation.navigate('ProductDetail')}
-        color="#000"
+        color={theme.colors.primary}
       />
     </View>
   );
