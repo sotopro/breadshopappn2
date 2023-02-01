@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 
 import { styles } from './styles';
-import { theme } from '../../constants/theme';
+import { THEME } from '../../constants/theme';
 
 const Categories = ({ navigation }) => {
   return (
@@ -11,7 +11,7 @@ const Categories = ({ navigation }) => {
       <Button
         title="Go to Products"
         onPress={() => navigation.navigate('Products')}
-        color={theme.colors.primary}
+        color={THEME.colors.primary}
       />
     </View>
   );
