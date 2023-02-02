@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 18,
-    fontFamily: 'Bitter-Bold',
+    fontSize: 14,
+    fontFamily: 'Bitter-Regular',
     color: THEME.colors.title,
     padding: 10,
   },
