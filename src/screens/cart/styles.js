@@ -48,4 +48,14 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Bitter-Bold',
   },
+  header: {
+    marginVertical: 20,
+    marginHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerTitle: {
+    fontFamily: 'Bitter-Bold',
+    fontSize: 18,
+  },
 });
