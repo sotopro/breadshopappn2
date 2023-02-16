@@ -9,5 +9,6 @@ export const THEME = {
     white: '#FFFFFF',
     black: '#000000',
     gray: '#979B9B',
+    error: '#BD1E1E',
   },
 };
