@@ -8,15 +8,24 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+import { useDispatch } from 'react-redux';
 
 import { styles } from './styles';
 import { THEME } from '../../constants/theme/index';
+import { signIn, signUp } from '../../store/actions';
 
 const Auth = ({ navigation }) => {
+  const dispatch = useDispatch();
   const [isLogin, setIsLogin] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const title = isLogin ? 'Login' : 'Register';
   const message = isLogin ? "Don't have an account?" : 'Already have an account?';
   const messageButton = isLogin ? 'Login' : 'Register';
+
+  const onHandlerSubmit = () => {
+    dispatch(isLogin ? signIn(email, password) : signUp(email, password));
+  };
   return (
     <KeyboardAvoidingView
       style={styles.keybordContainer}
@@ -32,7 +41,8 @@ const Auth = ({ navigation }) => {
             placeholderTextColor={THEME.colors.gray}
             autoCapitalize="none"
             autoCorrect={false}
-            onChangeText={() => {}}
+            onChangeText={(text) => setEmail(text)}
+            value={email}
           />
           <Text style={styles.label}>Password</Text>
           <TextInput
@@ -42,10 +52,11 @@ const Auth = ({ navigation }) => {
             secureTextEntry
             autoCapitalize="none"
             autoCorrect={false}
-            onChangeText={() => {}}
+            onChangeText={(text) => setPassword(text)}
+            value={password}
           />
           <View style={styles.buttonContainer}>
-            <Button title={messageButton} color={THEME.colors.primary} onPress={() => {}} />
+            <Button title={messageButton} color={THEME.colors.primary} onPress={onHandlerSubmit} />
             <View style={styles.prompt}>
               <TouchableOpacity style={styles.promptButton} onPress={() => setIsLogin(!isLogin)}>
                 <Text style={styles.promptMessage}>{message}</Text>
