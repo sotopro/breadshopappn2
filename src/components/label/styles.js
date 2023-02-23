@@ -1,24 +1,21 @@
 import { StyleSheet } from 'react-native';
 
-import { THEME } from '../../constants/theme/index';
+import { THEME } from '../../constants/theme';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  input: {
-    borderBottomColor: THEME.colors.primary,
-    borderBottomWidth: 1,
-    width: '90%',
+  label: {
+    fontSize: 14,
     fontFamily: 'Bitter-Regular',
-    marginBottom: 10,
-  },
-  message: {
     marginVertical: 5,
+    color: THEME.colors.text,
   },
-  helperText: {
+  sublabel: {
     fontSize: 12,
     fontFamily: 'Bitter-Regular',
-    color: THEME.colors.error,
+    color: THEME.colors.gray,
+    marginVertical: 5,
   },
 });
